@@ -5,6 +5,7 @@ on:
     types: [opened, edited, reopened]
 jobs:
   print_github_object:
+    runs-on: ubuntu-latest
     steps:
       - name: Print
         run: echo "${{ toJSON(github) }}"
