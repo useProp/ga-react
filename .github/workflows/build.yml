@@ -16,7 +16,7 @@ jobs:
           name: build
           path: build
   get_build_files:
-    needs: build
+    needs: upload_build_files
     runs-on: ubuntu-latest
     steps:
       - name: Get artifacts
