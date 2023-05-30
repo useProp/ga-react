@@ -34,11 +34,19 @@ jobs:
       - name: Linting
         run: npm run lint
   build:
-    runs-on: ubuntu-latest
     needs: [test, lint]
+    strategy:
+      matrix:
+        node-ver: [14, 16]
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-ver }}
       - name: Cache deps
         uses: actions/cache@v3
         with:
