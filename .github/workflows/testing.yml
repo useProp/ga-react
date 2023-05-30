@@ -1,6 +1,7 @@
 name: Testing React App
 on: push
 jobs:
+  testing:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
