@@ -9,4 +9,4 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: Run tests
-        tun: npm run test
+        run: npm run test
